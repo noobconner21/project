@@ -5,109 +5,82 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+  font-style: normal;
   font-weight: 500;
+  text-decoration: none;
 }
 
-.container {
-  /* background-color: aqua; */
+body {
+  background-image: url(./res/bk.jpg);
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* filter: blur(20px); */
+}
+
+.nav {
+  background-color: black;
+  /* filter: blur(5px); */
   display: flex;
   justify-content: space-between;
-  padding: 10px;
   align-items: center;
+  padding: 20px;
 }
 
-.container .mob-nev {
-  display: none;
-}
-
-.container .logo img {
-  width: 150px;
-}
-
-.container .left {
-  display: flex;
-  align-items: center;
-  /* background-color: yellow; */
-  /* cursor: pointer; */
-}
-
-.container .left ul {
-  cursor: pointer;
-}
-
-.container .left ul,
-.container .left a {
-  display: flex;
-  align-items: center;
-  list-style-type: none;
-  text-decoration: none;
-  /* background-color: brown; */
-  /* padding: 10px; */
-  margin: 10px;
-  color: black;
-}
-
-.container .left ul li:hover {
-  background-color: #adadad;
-  border-radius: 10px;
-}
-
-.container .right {
-  display: flex;
-  align-items: center;
-  /* background-color: yellow; */
-  /* cursor: pointer; */
-}
-
-.container .right ul,
-.container .right a {
-  display: flex;
-  align-items: center;
-  list-style-type: none;
-  text-decoration: none;
-  /* background-color: brown; */
-  /* padding: 10px; */
-  margin: 10px;
-  color: black;
-}
-
-.container .right .right_right .right_right_contant li {
-  background-color: #e60023;
-  margin: 5px;
+.nav .left {
+  /* background-color: white; */
   border-radius: 50px;
-  cursor: pointer;
-}
-
-.container .right .right_right .right_right_contant .signup {
-  background-color: #e2e1e1;
-}
-
-.container .right .right_right .right_right_contant a {
   color: white;
 }
 
-.container .right .right_right .right_right_contant .signup a {
-  color: black;
+.nav span {
+  color: yellow;
 }
 
-.container .right .right_right .right_right_contant .signup:hover {
-  background-color: #adadad;
+.nav .right ul li {
+  display: inline-block;
+  position: relative;
+  padding: 5px;
+}
+.nav .right ul li:hover ul {
+  display: block;
+  top: 40px;
 }
 
-.container .right .right_right .right_right_contant .login:hover {
-  background-color: #830518;
+.nav .right ul li a {
+  color: white;
 }
 
-.container .right .right_left a:hover {
-  text-decoration: underline;
+.nav .right ul li a:hover {
+  color: red;
 }
 
-@media screen and (max-width: 765px) {
-  .container .right {
-    display: none;
+.nav .right ul li ul {
+  display: block;
+  position: absolute;
+  background-color: black;
+  /* top: 40px; */
+  border-radius: 10px;
+}
+
+.nav .right ul li ul {
+  top: -400px;
+  z-index: -1;
+  transition: 0.5s;
+  box-shadow: 2px 2px 5px #888888;
+}
+
+.nav .right ul li ul li {
+  width: 100%;
+  text-align: center;
+  padding: 15px;
+}
+
+@media screen and (max-width: 475px) {
+  .nav {
+    flex-direction: column;
   }
-  .container .mob-nev {
-    display: block;
-  }
+  .nav .right {
+    margin-top: 20px;
   }
 }
